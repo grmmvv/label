@@ -13,6 +13,8 @@ jobs:
     name: Call E2E tests on push
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v1
       - name: Curl TeamCity
         env:
           BUILD_ID: "SuShi_TestAutomation_Delme"
