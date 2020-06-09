@@ -1,4 +1,4 @@
-name: Python package
+name: Call E2E tests
 
 on:
   pull_request:
@@ -11,10 +11,24 @@ on:
 
 
 jobs:
-  build:
-    name: Test job
+  e2e-pull-request-tests:
+    name: Call E2E tests on pull request
     runs-on: ubuntu-latest
     if: contains(github.event.pull_request.labels.*.name, 'grmmvv')
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Set up Python 3.6
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+
+      - name: Call python
+        run: python --version
+  e2e-push-request-tests:
+    name: Call E2E tests on push
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v1
