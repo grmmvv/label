@@ -9,8 +9,8 @@ env:
   TEAMCITY_TOKEN: ${{ secrets.TEAMCITY_TOKEN }}
 
 jobs:
-  e2e-push-request-tests:
-    name: Call E2E tests on push
+  e2e-push-tests:
+#    name: Call E2E tests on push
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
