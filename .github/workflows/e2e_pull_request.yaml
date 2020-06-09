@@ -6,6 +6,9 @@ on:
     branches:
       - master
 
+env:
+  TEAMCITY_TOKEN: ${{ secrets.TEAMCITY_TOKEN }}
+
 jobs:
   e2e-pull-request-tests:
     name: Call E2E tests on pull request
