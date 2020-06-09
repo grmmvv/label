@@ -10,7 +10,7 @@ jobs:
   e2e-pull-request-tests:
     name: Call E2E tests on pull request
     runs-on: ubuntu-latest
-    if: contains(github.event.pull_request.labels.*.name, 'grmmvv')
+    if: contains(github.event.pull_request.labels.*.name, 'Ready for Autotests')
     steps:
       - name: Checkout
         uses: actions/checkout@v1
