@@ -19,4 +19,4 @@ jobs:
           COMMENT: "<comment><text>Push to: ${{ github.ref }}, pusher: ${{ github.pusher.name }}</text></comment>"
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: |
-          echo "$GITHUB_CONTEXT"
+          ./utils/test_runner.sh
