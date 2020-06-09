@@ -22,9 +22,6 @@ if [ -z "$GITHUB_REF" ]; then
   exit 1
 fi
 
-if [ -z "$COMMENT" ]; then
-  echo "Empty comment"
-fi
-
 echo "<build branchName=\"$GITHUB_REF\"><buildType id=\"${BUILD_ID}\"/><change locator=\"version:$GITHUB_SHA,buildType:(id:$BUILD_ID)\"/>${COMMENT}</build>" >api_build.xml
+sleep 90
 curl -f https://teamcity.supplyshift.net/app/rest/buildQueue -X POST -H "Content-Type:application/xml" -H "Authorization:Bearer ${TEAMCITY_TOKEN}" --data-binary @api_build.xml
