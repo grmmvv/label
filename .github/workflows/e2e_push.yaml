@@ -20,4 +20,5 @@ jobs:
         env:
           BUILD_ID: "SuShi_TestAutomation_Delme"
           COMMENT: "<comment><text>Push to: ${{ github.ref }}, pusher: ${{ github.pusher.name }}</text></comment>"
-        run: ./utils/test_runner.sh
+#        run: ./utils/test_runner.sh
+        run: echo "Hello World!"

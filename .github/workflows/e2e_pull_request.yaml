@@ -1,4 +1,4 @@
-name: Call E2E tests
+name: Call DOA tests on pull request
 
 on:
   pull_request:
@@ -15,10 +15,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
 
-      - name: Set up Python 3.6
-        uses: actions/setup-python@v1
-        with:
-          python-version: 3.7
-
-      - name: Call python
-        run: python --version
+      - name: Curl TeamCity
+        env:
+          BUILD_ID: "SuShi_TestAutomation_Delme"
+          COMMENT: "<comment><text>Push to: ${{ github.ref }}, pusher: ${{ github.pusher.name }}</text></comment>"
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
