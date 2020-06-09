@@ -18,6 +18,6 @@ jobs:
       - name: Curl TeamCity
         env:
           BUILD_ID: "SuShi_TestAutomation_Delme"
-          COMMENT: "<comment><text>Push to: ${{ github.ref }}, pusher: ${{ github.pusher.name }}</text></comment>"
+          COMMENT: "<comment><text>${{ github.event.pull_request.title }}: ${{ github.event.pull_request._links.html.href }}</text></comment>"
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
