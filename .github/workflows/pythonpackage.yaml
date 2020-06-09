@@ -1,11 +1,12 @@
 name: Python package
 
-on: [push]
+on: [pull_request]
 
 jobs:
   build:
     name: Test job
     runs-on: ubuntu-latest
+    if: contains(github.event.pull_request.labels.*.name, 'grmmvv')
     steps:
       - name: Checkout
         uses: actions/checkout@v1
