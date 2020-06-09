@@ -1,4 +1,4 @@
-#name: Call E2E tests on push
+name: Call DOA tests on push
 
 on:
   push:
