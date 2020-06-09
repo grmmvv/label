@@ -1,4 +1,4 @@
-name: Call E2E tests on push
+#name: Call E2E tests on push
 
 on:
   push:
@@ -10,7 +10,7 @@ env:
 
 jobs:
   e2e-push-tests:
-#    name: Call E2E tests on push
+    name: Call E2E tests on push
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
