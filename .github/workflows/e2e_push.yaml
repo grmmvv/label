@@ -22,3 +22,6 @@ jobs:
           COMMENT: "<comment><text>Push to: ${{ github.ref }}, pusher: ${{ github.pusher.name }}</text></comment>"
 #        run: ./utils/test_runner.sh
         run: echo "Hello World!"
+
+      - name: Action test
+        uses: ./.github/actions/doa-testing
