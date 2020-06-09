@@ -7,7 +7,7 @@ on:
 
 env:
   TEAMCITY_TOKEN: ${{ secrets.TEAMCITY_TOKEN }}
-  COMMENT: "<comment><text>Push to: ${{ github.ref }}, pusher: ${{ github.pusher.name }}</text></comment>"
+  COMMENT: "<comment><text>Push to: ${{ github.ref }}, pusher: ${{ github.event.pusher.name }}</text></comment>"
   GITHUB_CONTEXT: ${{ toJson(github) }}
 
 jobs:
