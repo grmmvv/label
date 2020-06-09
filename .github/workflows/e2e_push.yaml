@@ -1,4 +1,4 @@
-name: Call E2E tests
+name: Call E2E tests on push
 
 on:
   push:
@@ -16,6 +16,7 @@ jobs:
       - name: Curl TeamCity
         env:
           BUILD_ID: "SuShi_TestAutomation_Delme"
+          COMMENT: "<comment><text>Push to: ${{ github.ref }}, pusher: ${{ github.pusher.name }}</text></comment>"
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: |
           echo "$GITHUB_CONTEXT"
