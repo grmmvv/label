@@ -19,16 +19,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
 
-      - name: Test if False
-        if: github.event.action == 'labeled' && github.event.label.name != 'Ready for Autotests'
-        run: echo 'False condition'
-
-      - name: Test if True
-        if: github.event.action == 'labeled' && github.event.label.name == 'Ready for Autotests'
-        run: echo 'True condition'
-
       - name: Curl TeamCity.
-        if: github.event.action == 'labeled' && github.event.action.label.name != 'Ready for Autotests'
         env:
           BUILD_ID: "SuShi_TestAutomation_Delme"
           COMMENT: "<comment><text>${{ github.event.pull_request.title }}: ${{ github.event.pull_request._links.html.href }}</text></comment>"
