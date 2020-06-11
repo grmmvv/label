@@ -20,11 +20,11 @@ jobs:
         uses: actions/checkout@v1
 
       - name: Test if False
-        if: github.event.action == 'labeled' && github.event.action.label.name != 'Ready for Autotests'
+        if: github.event.action == 'labeled' && github.event.label.name != 'Ready for Autotests'
         run: echo 'False condition'
 
       - name: Test if True
-        if: github.event.action == 'labeled' && github.event.action.label.name == 'Ready for Autotests'
+        if: github.event.action == 'labeled' && github.event.label.name == 'Ready for Autotests'
         run: echo 'True condition'
 
       - name: Curl TeamCity.
