@@ -8,6 +8,7 @@ on:
 
 env:
   TEAMCITY_TOKEN: ${{ secrets.TEAMCITY_TOKEN }}
+  GITHUB_CONTEXT: ${{ toJson(github) }}
 
 jobs:
   e2e-pull-request-tests:
